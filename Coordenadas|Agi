@@ -32,7 +32,7 @@
 
         <div class="section">
             <h2>Mapa de Unidades</h2>
-            <iframe src="mapa.html" width="100%" height="620px" style="border:none;"></iframe>
+            <iframe src="mapa_de_unidades.html" width="100%" height="620px" style="border:none;"></iframe>
         </div>
 
         <div class="section">
