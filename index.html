@@ -13,7 +13,7 @@
             margin: 0;
             padding: 0;
             background-color: #2F3039;
-            color: #333;
+            color: #ffffff;
         }
 
         .navbar {
@@ -24,6 +24,7 @@
             display: flex;
             align-items: center;
         }
+        
         .navbar h1 {
             margin: 0;
             font-size: 22px;
@@ -31,32 +32,51 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 30px auto;
             padding: 0 20px;
         }
 
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
         .card {
-            background: white;
+            background: #3a3b45;
             padding: 25px;
-            margin-bottom: 30px;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border: 1px solid #2F3039;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            border: 1px solid #4a4b59;
         }
 
         .card h2 {
             margin-top: 0;
             margin-bottom: 20px;
             font-size: 18px;
-            color: #4a5568;
-            border-bottom: 2px solid #2F3039;
+            color: #ffffff;
+            border-bottom: 2px solid #5a5b69;
             padding-bottom: 10px;
         }
-
+        
         .map-container iframe {
             border-radius: 8px;
-            border: 1px solid #ccc;
+            border: none;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 450px;
+            object-fit: contain;
+            border-radius: 8px;
+            background-color: white;
+        }
+
+        @media (max-width: 800px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -67,24 +87,20 @@
     </div>
 
     <div class="container">
-        <div class="card map-container">
-            <h2>Pesquise sua Loja</h2>
-            <iframe src="mapa.html" width="100%" height="550px"></iframe>
-        </div>
-
-        <div class="card">
-            <h2>Lojas x Região</h2>
-            <iframe src="Região.png" width="100%" heigth="550px"></iframe>
-            <p style="color: #2F3039; font-size: 14px;"></p>
+        <div class="grid-layout">
             
+            <div class="card map-container">
+                <h2>Pesquise sua Loja</h2>
+                <iframe src="mapa.html" width="100%" height="450px"></iframe>
             </div>
+
+            <div class="card image-container">
+                <h2>Lojas x Região</h2>
+                <img src="Região.png" alt="Gráfico Lojas x Região">
+            </div>
+
+        </div>
     </div>
 
 </body>
 </html>
-
-
-
-
-
-
