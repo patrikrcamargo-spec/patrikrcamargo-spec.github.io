@@ -168,6 +168,13 @@
 <div class="container">
   <div class="grid" id="grid"></div>
 </div>
+<div id="container-mapa" style="display: none; width: 100%; height: 80vh; padding: 16px 32px;">
+    <button class="btn btn-outline" onclick="alternarMapa()" style="margin-bottom: 12px;">⬅ Voltar para a Lista</button>
+    
+    <div style="width: 100%; height: 100%; border-radius: 12px; overflow: hidden; border: 1px solid var(--border);">
+        <iframe src="mapa.html" style="width: 100%; height: 100%; border: none;"></iframe>
+    </div>
+</div>
 
 <div class="export-panel">
   <div class="info">
@@ -459,6 +466,24 @@ function populateFilters() {
   document.getElementById(id).addEventListener('change', renderCards);
 });
 
+// Função para alternar entre a visão da lista e a visão do mapa
+function alternarMapa() {
+    const divFiltros = document.querySelector('.filters');
+    const divContainer = document.querySelector('.container');
+    const divMapa = document.getElementById('container-mapa');
+    
+    // Se o mapa está escondido, nós mostramos o mapa e escondemos a lista
+    if (divMapa.style.display === 'none') {
+        divContainer.style.display = 'none';
+        divFiltros.style.display = 'none'; // Esconde os filtros também para dar mais espaço
+        divMapa.style.display = 'block';
+    } else {
+        // Se o mapa está aparecendo, nós escondemos o mapa e voltamos para a lista
+        divContainer.style.display = 'block';
+        divFiltros.style.display = 'flex';
+        divMapa.style.display = 'none';
+    }
+} 
 // Init
 populateFilters();
 renderCards();
